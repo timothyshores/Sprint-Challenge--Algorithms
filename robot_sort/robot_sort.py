@@ -107,20 +107,11 @@ class SortingRobot:
         if self.is_sorted():
             return self.list()
         else:
-            # print(f"self.current(): {self.current()}")
-            # print(f"self.next(): {self.next()}")
             len = self.list_length()
             for i in range(len):
-                # self.debug("outer")
                 for j in range(0, len - i - 1):
-                    # self.debug("outer")
                     if self.list()[j] > self.list()[j + 1]:
-                        # print(f"Swap at index j: {j}")
                         self.swap_at(j)
-            # return self._list
-            # if self.current() > self.next() and self.can_move_right():
-            #     self.swap_items()
-            # self.move_right()
 
     def swap_at(self, value):
         self._position = value
@@ -132,7 +123,6 @@ class SortingRobot:
 
     def is_sorted(self):
         # returns true if the list is unsorted else returns false if the list is sorted
-        # return (all(self.current() <= self.next() for i in range(len(self.list()) - 1)))
         sorted = True
         i = 1
         while i < len(self._list):
